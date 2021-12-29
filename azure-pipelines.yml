@@ -19,7 +19,7 @@ steps:
 - task: UseDotNet@2
   displayName: 'Install .NET 6'
   inputs:
-    version: '6.X'
+    version: '6.x'
     includePreviewVersions: false # Required for preview versions
 
 - task: DotNetCoreCLI@2
