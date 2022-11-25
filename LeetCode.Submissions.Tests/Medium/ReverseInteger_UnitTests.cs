@@ -1,9 +1,9 @@
-using LeetCode.Easy.Submissions;
-using System;
-using Xunit;
+using LeetCode.Submissions.Medium;
 
-namespace LeetCode.Easy.Tests
+namespace LeetCode.Medium.Tests
 {
+    [Trait("Category", "Unit")]
+    [Trait("Category", "Medium")]
     public class ReverseInteger_UnitTests
     {
         public ReverseInteger_UnitTests()

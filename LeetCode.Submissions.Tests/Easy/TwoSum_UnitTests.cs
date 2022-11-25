@@ -1,9 +1,11 @@
-using LeetCode.Easy.Submissions;
+using LeetCode.Submissions.Easy;
 using System;
 using Xunit;
 
 namespace LeetCode.Easy.Tests
 {
+    [Trait("Category", "Unit")]
+    [Trait("Category", "Easy")]
     public class TwoSum_UnitTests
     {
         public TwoSum_UnitTests()
