@@ -4,9 +4,9 @@ namespace LeetCode.Medium.Tests
 {
     [Trait("Category", "Unit")]
     [Trait("Category", "Medium")]
-    public class ReverseInteger_UnitTests
+    public class ReverseIntegerUnitTests
     {
-        public ReverseInteger_UnitTests()
+        public ReverseIntegerUnitTests()
         {
 
         }

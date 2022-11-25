@@ -6,9 +6,9 @@ namespace LeetCode.Easy.Tests
 {
     [Trait("Category", "Unit")]
     [Trait("Category", "Easy")]
-    public class TwoSum_UnitTests
+    public class TwoSumUnitTests
     {
-        public TwoSum_UnitTests()
+        public TwoSumUnitTests()
         {
 
         }
