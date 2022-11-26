@@ -1,15 +1,11 @@
-using LeetCode.Easy.Submissions;
-using System;
-using Xunit;
+using LeetCode.Submissions.Medium;
 
-namespace LeetCode.Easy.Tests
+namespace LeetCode.Submissions.Tests.Medium
 {
-    public class ReverseInteger_UnitTests
+    [Trait("Category", "Unit")]
+    [Trait("Category", "Medium")]
+    public class ReverseIntegerUnitTests
     {
-        public ReverseInteger_UnitTests()
-        {
-
-        }
 
         [InlineData(123,321)]
         [InlineData(-123, -321)]
