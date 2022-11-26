@@ -2,7 +2,7 @@ using LeetCode.Submissions.Easy;
 using System;
 using Xunit;
 
-namespace LeetCode.Easy.Tests
+namespace LeetCode.Submissions.Tests.Easy
 {
     [Trait("Category", "Unit")]
     [Trait("Category", "Easy")]

@@ -1,15 +1,11 @@
 using LeetCode.Submissions.Medium;
 
-namespace LeetCode.Medium.Tests
+namespace LeetCode.Submissions.Tests.Medium
 {
     [Trait("Category", "Unit")]
     [Trait("Category", "Medium")]
     public class ReverseIntegerUnitTests
     {
-        public ReverseIntegerUnitTests()
-        {
-
-        }
 
         [InlineData(123,321)]
         [InlineData(-123, -321)]

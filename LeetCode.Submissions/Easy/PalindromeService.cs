@@ -48,53 +48,15 @@ namespace LeetCode.Submissions.Easy
                 return true;
             }
 
-
-
-
-            int minPower = 1;
-            int numberLength = (int)(Math.Floor(Math.Log10(numberToCheck))+1);
-
-            if(numberLength == 2)
+            int reversedNum = 0;
+            int numToReverse = numberToCheck;
+            while (numToReverse != 0)
             {
-                var xx = numberToCheck / 10;
-                var y = numberToCheck - 10;
-                return xx == y;
+                var numToAdd = numToReverse % 10;
+                reversedNum = reversedNum*10 + numToAdd;
+                numToReverse /= 10;
             }
-
-
-            while(minPower < numberLength)
-            {
-                var minCompareDigit = GetCompareDigit(numberToCheck, minPower);
-                var maxCompareDigit = GetCompareDigit(numberToCheck,numberLength);
-                if (minCompareDigit != maxCompareDigit)
-                {
-                    return false;
-                }
-
-                minPower++;
-                numberLength--;
-            }
-
-            return true;
+            return reversedNum == numberToCheck;
         }
-
-        private static double GetCompareDigit(int numberToCheck, int iterations)
-        {
-            var numberToParse = (double)numberToCheck;
-            for (int counter = 0; counter < iterations; counter++) 
-            {
-                var remainder = numberToParse % Math.Pow(10, iterations);
-
-                if(remainder < 10)
-                {
-                    return remainder;
-                }
-                numberToParse = remainder;
-            }
-
-            throw new Exception("failed");
-        }
-
-        //private static double
     }
 }
