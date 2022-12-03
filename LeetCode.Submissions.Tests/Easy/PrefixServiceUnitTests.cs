@@ -18,12 +18,30 @@ namespace LeetCode.Submissions.Tests.Easy
             prefixService = new PrefixService();
         }
 
+        [Theory]
+        [MemberData(nameof(TestCases))]
+        public void LongestCommonPrefixVersionOne_WhenGivenNumeral_ConvertsToInt(string[] testValues, string expectedResult)
+        {
+            var returnedValue = prefixService.LongestCommonPrefixVersionOne(testValues);
+
+            Assert.Equal(expectedResult, returnedValue);
+        }
+
 
         [Theory]
         [MemberData(nameof(TestCases))]
-        public void ConvertNumeral_WhenGivenNumeral_ConvertsToInt(string[] testValues, string expectedResult)
+        public void LongestCommonPrefixVersionTwo_WhenGivenNumeral_ConvertsToInt(string[] testValues, string expectedResult)
         {
-            var returnedValue = prefixService.LongestCommonPrefix(testValues);
+            var returnedValue = prefixService.LongestCommonPrefixVersionTwo(testValues);
+
+            Assert.Equal(expectedResult, returnedValue);
+        }
+
+        [Theory]
+        [MemberData(nameof(TestCases))]
+        public void LongestCommonPrefixVersionThree_WhenGivenNumeral_ConvertsToInt(string[] testValues, string expectedResult)
+        {
+            var returnedValue = prefixService.LongestCommonPrefixVersionThree(testValues);
 
             Assert.Equal(expectedResult, returnedValue);
         }
