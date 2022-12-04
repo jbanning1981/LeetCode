@@ -20,7 +20,7 @@ namespace LeetCode.Submissions.Tests.Easy
 
         [Theory]
         [MemberData(nameof(TestCases))]
-        public void LongestCommonPrefixVersionOne_WhenGivenNumeral_ConvertsToInt(string[] testValues, string expectedResult)
+        public void LongestCommonPrefixVersionOne_WhenProvidedValidArray_ReturnsLongestCommonPrefix(string[] testValues, string expectedResult)
         {
             var returnedValue = prefixService.LongestCommonPrefixVersionOne(testValues);
 
@@ -30,7 +30,7 @@ namespace LeetCode.Submissions.Tests.Easy
 
         [Theory]
         [MemberData(nameof(TestCases))]
-        public void LongestCommonPrefixVersionTwo_WhenGivenNumeral_ConvertsToInt(string[] testValues, string expectedResult)
+        public void LongestCommonPrefixVersionTwo_WhenProvidedValidArray_ReturnsLongestCommonPrefix(string[] testValues, string expectedResult)
         {
             var returnedValue = prefixService.LongestCommonPrefixVersionTwo(testValues);
 
@@ -39,7 +39,7 @@ namespace LeetCode.Submissions.Tests.Easy
 
         [Theory]
         [MemberData(nameof(TestCases))]
-        public void LongestCommonPrefixVersionThree_WhenGivenNumeral_ConvertsToInt(string[] testValues, string expectedResult)
+        public void LongestCommonPrefixVersionThree_WhenProvidedValidArray_ReturnsLongestCommonPrefix(string[] testValues, string expectedResult)
         {
             var returnedValue = prefixService.LongestCommonPrefixVersionThree(testValues);
 
