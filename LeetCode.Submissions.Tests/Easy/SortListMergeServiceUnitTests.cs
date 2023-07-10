@@ -34,7 +34,7 @@ namespace LeetCode.Submissions.Tests.Easy
         {
             var sortedList = service.MergeTwoLists(nodeOne, nodeTwo);
 
-            int currentValue = 0;
+            int currentValue = -int.MaxValue;
             int nodeCount = 0;
             if (sortedList != null)
             {
@@ -72,11 +72,11 @@ namespace LeetCode.Submissions.Tests.Easy
 
             return new List<object[]>
             {
+                new object[] { listThreeItemOne, listFourItemOne, 4 },
                 new object[] { null, new ListNode(0), 1 },
                 new object[] { listOneItemOne, listTwoItemOne, 6 },
                 new object[] { null, null, 0 },
-                new object[] { new ListNode(2), new ListNode(1), 2 },
-                new object[] { listThreeItemOne, listFourItemOne, 4 }
+                new object[] { new ListNode(2), new ListNode(1), 2 }
             };
         }
 
