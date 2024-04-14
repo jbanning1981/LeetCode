@@ -8,7 +8,8 @@ using Xunit;
 
 namespace LeetCode.Submissions.Tests.Easy
 {
-    [Trait("Category", "zzUnit")]
+    [Trait("Category", "Easy")]
+    [Trait("Category", "Unit")]
     public class SortListMergeServiceUnitTests
     {
         SortListMergeService service = new();
