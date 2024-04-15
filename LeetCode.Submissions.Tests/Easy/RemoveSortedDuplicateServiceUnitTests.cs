@@ -9,7 +9,7 @@ using Xunit;
 
 namespace LeetCode.Submissions.Tests.Easy
 {
-    [Trait("Category", "xxEasy")]
+    [Trait("Category", "Easy")]
     [Trait("Category", "Unit")]
     public class RemoveSortedDuplicateServiceUnitTests
     {
