@@ -1,0 +1,157 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
+using System.Reflection.Metadata.Ecma335;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace LeetCode.Submissions.Easy
+{
+    public class RemoveSortedDuplicateService
+    {
+
+        public int RemoveDuplicates(int[] nums)
+        {
+            var uniqueNumbers = new HashSet<int>();
+
+            for (int counter = 0; counter < nums.Length; ++counter)
+            {
+                if (!uniqueNumbers.Contains(nums[counter]))
+                {
+                    uniqueNumbers.Add(nums[counter]);
+                    nums[uniqueNumbers.Count - 1] = nums[counter];
+                }
+            }
+
+            return uniqueNumbers.Count;
+        }
+
+        public int RemoveDuplicates_WithHashMap_V1(int[] nums)
+        {
+            var uniqueNumbers = new HashSet<int>();
+
+            for (int counter = 0; counter < nums.Length; ++counter)
+            {
+                if (!uniqueNumbers.Contains(nums[counter]))
+                {
+                    uniqueNumbers.Add(nums[counter]);
+                }
+            }
+
+            for (int counter = 0; counter < uniqueNumbers.Count; ++counter)
+            {
+                nums[counter] = uniqueNumbers.ElementAt(counter);
+            }
+
+            return uniqueNumbers.Count;
+        }
+
+        public int RemoveDuplicates_NoHashMap_v2(int[] nums)
+        {
+            if ((nums?.Length ?? 0) <= 1)
+            {
+                return nums?.Length ?? 0;
+            }
+            int uniqueCounter = 0;
+            int insertIndex = 0;
+            bool isDuplicate = false;
+
+            Debugger.Log(-1, "", Environment.NewLine);
+            Debugger.Log(-1, "", string.Join(",", nums.Select(x => x.ToString())));
+            Debugger.Log(-1, "", Environment.NewLine);
+            for (int counter = 1; counter < nums.Length; counter++)
+            {
+                if (nums[counter - 1] == nums[counter])
+                {
+                    if (!isDuplicate)
+                    {
+                        isDuplicate = true;
+                        insertIndex = uniqueCounter + 1;
+                    }
+                    Debugger.Log(-1, "", $"{(counter + 1)} - {string.Join(",", nums.Select(x => x.ToString()))} {Environment.NewLine}");
+                }
+                else
+                {
+                    uniqueCounter++;
+                    if (isDuplicate)
+                    {
+                        nums[insertIndex] = nums[counter];
+                        counter = insertIndex;
+                        isDuplicate = false;
+                    }
+
+                    if (counter == nums.Length - 2)
+                    {
+                        if (nums[counter - 1] == nums[counter] && nums[counter] != nums[counter + 1])
+                        {
+                            nums[counter] = nums[counter + 1];
+                            uniqueCounter++;
+                        }
+                    }
+                }
+
+                if (counter == nums.Length - 1)
+                {
+                    uniqueCounter++;
+                }
+                Debugger.Log(-1, "", $"{(counter + 1)} - {string.Join(",", nums.Select(x => x.ToString()))} {Environment.NewLine}");
+            }
+            Debugger.Log(-1, "", string.Join(",", nums.Select(x => x.ToString())));
+            return uniqueCounter;
+        }
+
+
+        public int RemoveDuplicates_NoHashMap_v1(int[] nums)
+        {
+            if ((nums?.Length ?? 0) <= 1)
+            {
+                return nums?.Length ?? 0;
+            }
+            int uniqueCounter = 0;
+            int insertIndex = 0;
+            bool isDuplicate = false;
+
+            Debugger.Log(-1, "", Environment.NewLine);
+            Debugger.Log(-1, "", string.Join(",", nums.Select(x => x.ToString())));
+            Debugger.Log(-1, "", Environment.NewLine);
+            for (int counter = 0; counter < nums.Length - 1; counter++)
+            {
+                if (counter == 2)
+                {
+                    Debugger.Break();
+                }
+
+
+                if (nums[counter] == nums[counter + 1])
+                {
+                    if (!isDuplicate)
+                    {
+                        isDuplicate = true;
+                        insertIndex = uniqueCounter + 1;
+                    }
+                    Debugger.Log(-1, "", $"{(counter + 1)} - {string.Join(",", nums.Select(x => x.ToString()))} {Environment.NewLine}");
+                }
+                else
+                {
+                    uniqueCounter++;
+                    if (isDuplicate)
+                    {
+                        nums[insertIndex] = nums[counter + 1];
+                        isDuplicate = false;
+                    }
+                }
+
+
+
+                if (counter == nums.Length - 2)
+                {
+                    uniqueCounter++;
+                }
+                Debugger.Log(-1, "", $"{(counter + 1)} - {string.Join(",", nums.Select(x => x.ToString()))} {Environment.NewLine}");
+            }
+            Debugger.Log(-1, "", string.Join(",", nums.Select(x => x.ToString())));
+            return uniqueCounter;
+        }
+    }
+}
