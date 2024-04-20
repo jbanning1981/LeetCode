@@ -11,18 +11,18 @@ namespace LeetCode.Submissions.Tests.Easy
     [Trait("Category", "Unit")]
     public class PrefixServiceUnitTests
     {
-        PrefixService prefixService;
+        PrefixService _prefixService;
 
         public PrefixServiceUnitTests()
         {
-            prefixService = new PrefixService();
+            _prefixService = new PrefixService();
         }
 
         [Theory]
         [MemberData(nameof(TestCases))]
         public void LongestCommonPrefixVersionOne_WhenProvidedValidArray_ReturnsLongestCommonPrefix(string[] testValues, string expectedResult)
         {
-            var returnedValue = prefixService.LongestCommonPrefixVersionOne(testValues);
+            var returnedValue = _prefixService.LongestCommonPrefixVersionOne(testValues);
 
             Assert.Equal(expectedResult, returnedValue);
         }
@@ -32,7 +32,7 @@ namespace LeetCode.Submissions.Tests.Easy
         [MemberData(nameof(TestCases))]
         public void LongestCommonPrefixVersionTwo_WhenProvidedValidArray_ReturnsLongestCommonPrefix(string[] testValues, string expectedResult)
         {
-            var returnedValue = prefixService.LongestCommonPrefixVersionTwo(testValues);
+            var returnedValue = _prefixService.LongestCommonPrefixVersionTwo(testValues);
 
             Assert.Equal(expectedResult, returnedValue);
         }
@@ -41,7 +41,7 @@ namespace LeetCode.Submissions.Tests.Easy
         [MemberData(nameof(TestCases))]
         public void LongestCommonPrefixVersionThree_WhenProvidedValidArray_ReturnsLongestCommonPrefix(string[] testValues, string expectedResult)
         {
-            var returnedValue = prefixService.LongestCommonPrefixVersionThree(testValues);
+            var returnedValue = _prefixService.LongestCommonPrefixVersionThree(testValues);
 
             Assert.Equal(expectedResult, returnedValue);
         }

@@ -11,18 +11,18 @@ namespace LeetCode.Submissions.Tests.Easy
     [Trait("Category", "Unit")]
     public class ParenthesisServiceUnitTests
     {
-        ParenthesisService ParenthesisService;
+        ParenthesisService _parenthesisService;
 
         public ParenthesisServiceUnitTests()
         {
-            ParenthesisService = new ParenthesisService();
+            _parenthesisService = new ParenthesisService();
         }
 
         [Theory]
         [MemberData(nameof(TestCases))]
         public void IsValidParenthesis_ReturnsSuccessfully(string testValue, bool expectedResult)
         {
-            var returnedValue = ParenthesisService.IsValid(testValue);
+            var returnedValue = _parenthesisService.IsValid(testValue);
 
             Assert.Equal(expectedResult, returnedValue);
         }

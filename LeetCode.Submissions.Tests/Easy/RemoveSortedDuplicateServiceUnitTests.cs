@@ -32,14 +32,14 @@ namespace LeetCode.Submissions.Tests.Easy
          
         */
 
-        RemoveSortedDuplicateService service = new();
+        RemoveSortedDuplicateService _removeSortedDuplicateService = new();
 
 
         [Theory]
         [MemberData(nameof(TestCases))]
         public void Test(int[] testNums, int[] expectedNums)
         {
-            var uniqueNums = service.RemoveDuplicates(testNums);
+            var uniqueNums = _removeSortedDuplicateService.RemoveDuplicates(testNums);
 
             Assert.Equal(expectedNums.Length, uniqueNums);
 
