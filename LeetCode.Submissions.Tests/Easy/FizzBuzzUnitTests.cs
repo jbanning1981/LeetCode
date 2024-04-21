@@ -11,18 +11,18 @@ namespace LeetCode.Submissions.Tests.Easy
     [Trait("Category", "Easy")]
     public class FizzBuzzUnitTests
     {
-        private FizzBuzzService fizzBuzzService;
+        private FizzBuzzService _fizzBuzzService;
 
         public FizzBuzzUnitTests()
         {
-            fizzBuzzService = new FizzBuzzService();
+            _fizzBuzzService = new FizzBuzzService();
         }
 
         [Theory]
         [MemberData(nameof(TestCases))]
         public void FizzBuzzV1_WhenProvidedValidInt_GeneratesListOutput(int arraySize, string[] expectedResult)
         {
-            var returnedArray = fizzBuzzService.FizzBuzzV1(arraySize);
+            var returnedArray = _fizzBuzzService.FizzBuzzV1(arraySize);
 
             for(int counter = 0; counter < returnedArray.Count; counter++) 
             {
@@ -34,7 +34,7 @@ namespace LeetCode.Submissions.Tests.Easy
         [MemberData(nameof(TestCases))]
         public void FizzBuzzV2_WhenProvidedValidInt_GeneratesListOutput(int arraySize, string[] expectedResult)
         {
-            var returnedArray = fizzBuzzService.FizzBuzzV2(arraySize);
+            var returnedArray = _fizzBuzzService.FizzBuzzV2(arraySize);
 
             for (int counter = 0; counter < returnedArray.Count; counter++)
             {
@@ -46,7 +46,7 @@ namespace LeetCode.Submissions.Tests.Easy
         [MemberData(nameof(TestCases))]
         public void FizzBuzzV3_WhenProvidedValidInt_GeneratesListOutput(int arraySize, string[] expectedResult)
         {
-            var returnedArray = fizzBuzzService.FizzBuzzV3(arraySize);
+            var returnedArray = _fizzBuzzService.FizzBuzzV3(arraySize);
 
             for (int counter = 0; counter < returnedArray.Count; counter++)
             {
@@ -58,7 +58,7 @@ namespace LeetCode.Submissions.Tests.Easy
         [MemberData(nameof(TestCases))]
         public void FizzBuzzV4_WhenProvidedValidInt_GeneratesListOutput(int arraySize, string[] expectedResult)
         {
-            var returnedArray = fizzBuzzService.FizzBuzzV4(arraySize);
+            var returnedArray = _fizzBuzzService.FizzBuzzV4(arraySize);
 
             for (int counter = 0; counter < returnedArray.Count; counter++)
             {
@@ -70,7 +70,7 @@ namespace LeetCode.Submissions.Tests.Easy
         [MemberData(nameof(TestCases))]
         public void FizzBuzzV5_WhenProvidedValidInt_GeneratesListOutput(int arraySize, string[] expectedResult)
         {
-            var returnedArray = fizzBuzzService.FizzBuzzV5(arraySize);
+            var returnedArray = _fizzBuzzService.FizzBuzzV5(arraySize);
 
             for (int counter = 0; counter < returnedArray.Count; counter++)
             {
@@ -82,7 +82,7 @@ namespace LeetCode.Submissions.Tests.Easy
         [MemberData(nameof(TestCases))]
         public void FizzBuzzV6_WhenProvidedValidInt_GeneratesListOutput(int arraySize, string[] expectedResult)
         {
-            var returnedArray = fizzBuzzService.FizzBuzzV6(arraySize);
+            var returnedArray = _fizzBuzzService.FizzBuzzV6(arraySize);
 
             for (int counter = 0; counter < returnedArray.Count; counter++)
             {

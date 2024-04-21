@@ -36,7 +36,7 @@ namespace LeetCode.Submissions.Easy
 
     public class RomanNumeralService
     {
-        private readonly Dictionary<string, int> numeralLookup = new()
+        private readonly Dictionary<string, int> _numeralLookup = new()
         {
                 {"I", 1},
                 {"V", 5},
@@ -55,9 +55,9 @@ namespace LeetCode.Submissions.Easy
 
         public int ConvertNumeralToNumber(string romanNumeral)
         {
-            if (romanNumeral.Length <= 2 && numeralLookup.ContainsKey(romanNumeral))
+            if (romanNumeral.Length <= 2 && _numeralLookup.ContainsKey(romanNumeral))
             {
-                return numeralLookup[romanNumeral];
+                return _numeralLookup[romanNumeral];
             }
 
             int counter = 0;
@@ -66,20 +66,20 @@ namespace LeetCode.Submissions.Easy
             {
                 if (counter == (romanNumeral.Length - 1))
                 {
-                    parsedValue += numeralLookup[romanNumeral[counter].ToString()];
+                    parsedValue += _numeralLookup[romanNumeral[counter].ToString()];
                     break;
                 }
 
                 var twoCharLookup = new string(new[] { romanNumeral[counter], romanNumeral[counter + 1] });
 
-                if (numeralLookup.ContainsKey(twoCharLookup))
+                if (_numeralLookup.ContainsKey(twoCharLookup))
                 {
-                    parsedValue += numeralLookup[twoCharLookup];
+                    parsedValue += _numeralLookup[twoCharLookup];
                     counter += 2;
                     continue;
                 }
 
-                parsedValue += numeralLookup[romanNumeral[counter].ToString()];
+                parsedValue += _numeralLookup[romanNumeral[counter].ToString()];
                 counter += 1;
             }
 

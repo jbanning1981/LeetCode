@@ -12,28 +12,27 @@ namespace LeetCode.Submissions.Tests.Easy
     [Trait("Category", "Unit")]
     public class SortListMergeServiceUnitTests
     {
-        SortListMergeService service = new();
+        SortListMergeService _sortListMergeService = new();
 
         /*
-         * 
-         * Input: list1 = [1,2,4], list2 = [1,3,4]
-    Output: [1,1,2,3,4,4]
+            Input: list1 = [1,2,4], list2 = [1,3,4]
+            Output: [1,1,2,3,4,4]
 
-    Example 2:
+            Example 2:
 
-    Input: list1 = [], list2 = []
-    Output: []
+            Input: list1 = [], list2 = []
+            Output: []
 
-    Example 3:
+            Example 3:
 
-    Input: list1 = [], list2 = [0]
-    Output: [0]
-    */
+            Input: list1 = [], list2 = [0]
+            Output: [0]
+        */
         [Theory]
         [MemberData(nameof(CreateTestLists))]
         public void SortListMerge_WhenGivenTwoLists_ReturnsMergedList(ListNode nodeOne, ListNode nodeTwo, int expectedResultCount)
         {
-            var sortedList = service.MergeTwoLists(nodeOne, nodeTwo);
+            var sortedList = _sortListMergeService.MergeTwoLists(nodeOne, nodeTwo);
 
             int currentValue = -int.MaxValue;
             int nodeCount = 0;

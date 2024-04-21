@@ -11,11 +11,11 @@ namespace LeetCode.Submissions.Tests.Easy
     [Trait("Category", "Unit")]
     public class RomanNumeralUnitTests
     {
-        RomanNumeralService numeralService;
+        RomanNumeralService _numeralService;
 
         public RomanNumeralUnitTests()
         {
-            numeralService = new RomanNumeralService();
+            _numeralService = new RomanNumeralService();
         }
 
 
@@ -23,7 +23,7 @@ namespace LeetCode.Submissions.Tests.Easy
         [MemberData(nameof(TestNumerals))]
         public void ConvertNumeral_WhenGivenNumeral_ConvertsToInt(string romanNumeral, int expectedValue)
         {
-            var returnedValue = numeralService.ConvertNumeralToNumber(romanNumeral);
+            var returnedValue = _numeralService.ConvertNumeralToNumber(romanNumeral);
 
             Assert.Equal(expectedValue, returnedValue);
         }
